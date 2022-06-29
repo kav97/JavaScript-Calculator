@@ -1,5 +1,28 @@
+@use "./variables" as *;
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+body {
+    header {
+        background-color: $header-footer-color;
+
+        h1 {
+            color: $number-text-color;
+        }
+    }
+    main {
+        background-color: $background-color;
+    }
+
+    footer {
+        background-color: $header-footer-color;
+
+        h2 {
+             color: $number-text-color
+        }
+    }
 }

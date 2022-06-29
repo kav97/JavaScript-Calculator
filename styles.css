@@ -2,4 +2,20 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+body header {
+  background-color: goldenrod;
+}
+body header h1 {
+  color: white;
+}
+body main {
+  background-color: black;
+}
+body footer {
+  background-color: goldenrod;
+}
+body footer h2 {
+  color: white;
 }/*# sourceMappingURL=styles.css.map */
