@@ -1,0 +1,27 @@
+@use "./variables" as *;
+
+.calculator__buttons {
+    //display: grid;
+
+    .btn__btn-function {
+        background-color: $function-button-color;
+        color: $function-text-color;
+        // padding: 0.5rem;
+        // margin: 0.5rem
+
+        &:hover{
+            background-color: blue;
+        }
+
+    }
+
+    .btn__btn-opperator {
+        background-color: $opperator-button-color;
+        color: $number-text-color;
+    }
+
+    .btn__btn-num {
+        background-color: $number-button-color;
+        color: $number-text-color;
+    }
+}

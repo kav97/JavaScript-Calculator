@@ -1,21 +1,40 @@
+header {
+  background-color: rgb(25, 136, 187);
+}
+header h1 {
+  display: block;
+  color: white;
+}
+
+footer {
+  background-color: rgb(25, 136, 187);
+}
+footer h2 {
+  color: white;
+}
+
+.calculator__buttons .btn__btn-function {
+  background-color: lightgrey;
+  color: black;
+}
+.calculator__buttons .btn__btn-function:hover {
+  background-color: blue;
+}
+.calculator__buttons .btn__btn-opperator {
+  background-color: orange;
+  color: white;
+}
+.calculator__buttons .btn__btn-num {
+  background-color: grey;
+  color: white;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body header {
-  background-color: goldenrod;
-}
-body header h1 {
-  color: white;
-}
 body main {
   background-color: black;
-}
-body footer {
-  background-color: goldenrod;
-}
-body footer h2 {
-  color: white;
 }/*# sourceMappingURL=styles.css.map */

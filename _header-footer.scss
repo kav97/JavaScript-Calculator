@@ -1,0 +1,18 @@
+@use "./variables" as *;
+
+header {
+    background-color: $header-footer-color;
+
+    h1 {
+        display: block;
+        color: $number-text-color;
+    }
+}
+
+footer {
+    background-color: $header-footer-color;
+
+    h2 {
+        color: $number-text-color
+    }
+}

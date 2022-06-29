@@ -1,4 +1,6 @@
 @use "./variables" as *;
+@use "./header-footer";
+@use "./buttons";
 
 * {
     margin: 0;
@@ -7,22 +9,8 @@
 }
 
 body {
-    header {
-        background-color: $header-footer-color;
 
-        h1 {
-            color: $number-text-color;
-        }
-    }
     main {
         background-color: $background-color;
-    }
-
-    footer {
-        background-color: $header-footer-color;
-
-        h2 {
-             color: $number-text-color
-        }
     }
 }
