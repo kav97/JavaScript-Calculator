@@ -1,7 +1,6 @@
 @use "./variables" as *;
 @use "./header-footer";
 @use "./buttons";
-@use "./calculator-buttons";
 
 * {
     margin: 0;
@@ -9,9 +8,18 @@
     box-sizing: border-box;
 }
 
-body {
-    main{
-        background-color: $background-color;
-    }
+.calculator__container{
+    margin: 1rem;
+    border-radius: 5%;
+    padding: 1rem;
+    background-color: $background-color;
 
+    .calculator__screen {
+        height: 5rem;
+        text-align: end;
+        margin: 1rem 0 0 0;
+        color: $number-text-color;
+        font-size: 3rem;
+    }
 }
+
