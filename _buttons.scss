@@ -1,13 +1,18 @@
 @use "./variables" as *;
 
 .calculator__buttons {
-    //display: grid;
+    margin: 2rem 0 2rem 0;
+
+    button {
+        padding: 0.5rem;
+        margin: 0.5rem;
+
+    }
 
     .btn__btn-function {
         background-color: $function-button-color;
         color: $function-text-color;
-        // padding: 0.5rem;
-        // margin: 0.5rem
+        
 
         &:hover{
             background-color: blue;
@@ -21,6 +26,11 @@
     }
 
     .btn__btn-num {
+        background-color: $number-button-color;
+        color: $number-text-color;
+    }
+
+    .btn__btn-num-0 {
         background-color: $number-button-color;
         color: $number-text-color;
     }

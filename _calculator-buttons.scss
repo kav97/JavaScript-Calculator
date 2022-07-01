@@ -1,0 +1,12 @@
+@use "./variables" as *;
+
+.calculator__buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+
+    .btn__btn-num-0 {
+        grid-column: 1/3;
+
+    }
+}

@@ -1,6 +1,7 @@
 @use "./variables" as *;
 @use "./header-footer";
 @use "./buttons";
+@use "./calculator-buttons";
 
 * {
     margin: 0;
@@ -9,8 +10,8 @@
 }
 
 body {
-
-    main {
+    main{
         background-color: $background-color;
     }
+
 }
