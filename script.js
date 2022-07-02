@@ -2,9 +2,48 @@
 const numberButton = document.querySelectorAll(".btn__btn-num, .btn__btn-num-0")
 const opperatorButton = document.querySelectorAll(".btn__btn-opperator")
 const equalsTo = document.querySelectorAll("#equal")
-const screenDisplay = document.querySelectorAll(".main__calculation-textbox");
-const allClear = document.querySelectorAll("#keypad-clear")
+const screenDisplay = document.querySelectorAll(".calculator__screen");
+const allClear = document.querySelectorAll("#clear")
 
-// define the functions needed to carry out all the problems
+let firstNum = 0;
+let secondNum = 0;
+let resultNum = 0;
+let opperator = undefined;
 
-// add event triggers that reads input, performs the action and returns an output
+// define the functions needed to carry out all the problems //////////////////////////
+// clear function /////////////////////////////////////////////////////////////////////
+
+// sign function //////////////////////////////////////////////////////////////////////
+
+// calculate /x-+% function ////////////////////////////////////////////////////////////
+const calculateEquation = () => {       
+
+    //divide
+    if (opperator == "/") {
+        resultNum = firstNum / secondNum;
+    
+    //multiply
+    } else if (opperator == "x") {
+        resultNum = firstNum * secondNum;
+    
+    //subtract
+    } else if (opperator == "-") {
+        resultNum = firstNum - secondNum;
+
+    //add
+    } else if (opperator = "+") {
+        resultNum = firstNum + secondNum;
+    
+    //percentage
+    } else if (opperator = "%") {
+        resultNum = firstNum / 100;
+    }
+
+    return resultNum;
+};
+
+// convert to percentage function /////////////////////////////////////////////////////
+
+// function that equates and joins it all together??? idk//////////////////////////////
+
+// add event triggers that reads input, performs the action and returns an output /////
