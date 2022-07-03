@@ -21,13 +21,18 @@
         color: $number-text-color;
     }
 
+    .btn__btn-equal {
+        background-color: $opperator-button-color;
+        color: $number-text-color;
+    }
+
     .btn__btn-num {
         background-color: $number-button-color;
         color: $number-text-color;
         
     }
 
-    .btn__btn-num-0 {
+    #zero {
         background-color: $number-button-color;
         color: $number-text-color;
         grid-column: 1/3;

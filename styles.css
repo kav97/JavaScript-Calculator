@@ -31,11 +31,15 @@ footer h2 {
   background-color: orange;
   color: white;
 }
+.calculator__buttons .btn__btn-equal {
+  background-color: orange;
+  color: white;
+}
 .calculator__buttons .btn__btn-num {
   background-color: grey;
   color: white;
 }
-.calculator__buttons .btn__btn-num-0 {
+.calculator__buttons #zero {
   background-color: grey;
   color: white;
   grid-column: 1/3;
