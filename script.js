@@ -1,9 +1,9 @@
 // define initial vals and variables
-const numberButton = document.querySelectorAll(".btn__btn-num, .btn__btn-num-0")
-const opperatorButton = document.querySelectorAll(".btn__btn-opperator")
-const equalsTo = document.querySelectorAll("#equal")
+const numberButton = document.querySelector(".btn__btn-num, .btn__btn-num-0")
+const opperatorButton = document.querySelector(".btn__btn-opperator")
+const equalsToButton = document.querySelectorAll("#equal")
 const screenDisplay = document.querySelectorAll(".calculator__screen");
-const allClear = document.querySelectorAll("#clear")
+const allClearButton = document.querySelector("#clear")
 
 let firstNum = 0;
 let secondNum = 0;
