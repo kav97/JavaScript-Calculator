@@ -3,6 +3,8 @@ const opperators = document.querySelectorAll(".btn__btn-opperator");
 const numbers = document.querySelectorAll(".btn__btn-num");
 const equalsToButton = document.querySelector("#equal");
 const allClearButton = document.querySelector("#clear");
+const percentButton = document.querySelector("#percent");
+const plusMinusButton =document.querySelector("#plusMinus");
 let screenDisplay = document.querySelectorAll(".calculator__screen")[0];
 
 //has the user clicked equals to get a result
@@ -17,19 +19,12 @@ for(let i = 0; i < numbers.length; i++) {
         let currentStringOnScreen = screenDisplay.innerHTML;
         let lastCharacter = currentStringOnScreen[currentStringOnScreen.length - 1];
 
-        if(isResultDisplayed === false && screenDisplay.innerHTML.length < 9){
+        if(screenDisplay.innerHTML.length < 9){
             screenDisplay.innerHTML += event.target.innerHTML;
         }
 
     });
 }
-
-//add listener for clear
-allClearButton.addEventListener("click", function(event) {
-    console.log("AC button cleared display")
-    screenDisplay.innerHTML = "";
-    isResultDisplayed = false;
-});
 
 //add listeners for operand buttons
 for(let i = 0; i < opperators.length; i++) {
@@ -48,10 +43,11 @@ for(let i = 0; i < opperators.length; i++) {
         else if(lastCharacter === "+" || lastCharacter === "-" || lastCharacter === "x" || lastCharacter === "/" ) {
             screenDisplay.innerHTML = currentStringOnScreen.substring(0, currentStringOnScreen.length - 1) + event.target.innerHTML;
         }
-        //else add the operator to the screen
-        else if(isResultDisplayed === false && screenDisplay.innerHTML.length < 9) {
-            screenDisplay.innerHTML += event.target.innerHTML;
+        //else calculate the value and append new operator
+        else{
+            screenDisplay.innerHTML = calculateEquation(screenDisplay.innerHTML) + event.target.innerHTML;
         }
+        
     });
 }
 
@@ -64,15 +60,17 @@ equalsToButton.addEventListener("click", (event) => {
 
 })
 
-// define the functions needed to carry out all the problems //////////////////////////
-// clear function /////////////////////////////////////////////////////////////////////
+//add listener for clear
+allClearButton.addEventListener("click", function(event) {
+    console.log("AC button cleared display")
+    screenDisplay.innerHTML = "";
+    isResultDisplayed = false;
+});
 
-// sign function //////////////////////////////////////////////////////////////////////
 
-// calculate /x-+% function ////////////////////////////////////////////////////////////
+
+// calculate /x-+ function /////////////////////////////////////////////////////////////
 const calculateEquation = (stringOnScreen) => {       
-    let firstNum = 0;
-    let secondNum = 0;
     let resultNum = 0;
  
     //split the stringOnScreen parameter based on the operand (+, -, x, /)
@@ -82,17 +80,34 @@ const calculateEquation = (stringOnScreen) => {
     //divide
     if (stringOnScreen.includes("/")) {
         let splitString = stringOnScreen.split("/");
-        firstNum = splitString[0];
-        secondNum = splitString[1];
-        resultNum = firstNum / secondNum;
+        if(splitString.length > 1){
+            resultNum = parseFloat(splitString[0]) / parseFloat(splitString[1]);
+        }
     }
     //multiply
-   
+    else if (stringOnScreen.includes("*")) {
+        let splitString = stringOnScreen.split("*");
+        if(splitString.length > 1){
+            resultNum = parseFloat(splitString[0]) * parseFloat(splitString[1]);
+        }
+    }
     //subtract
-   
+    else if (stringOnScreen.includes("-")) {
+        let splitString = stringOnScreen.split("-");
+        if(splitString.length > 1){
+            resultNum = parseFloat(splitString[0]) - parseFloat(splitString[1]);
+        }
+    }
     //add
-   
-    //percentage
+    else if (stringOnScreen.includes("+")) {
+        let splitString = stringOnScreen.split("+");
+        if(splitString.length > 1){
+            resultNum = parseFloat(splitString[0]) + parseFloat(splitString[1]);
+        }
+    }
+    else{
+        return stringOnScreen;
+    }
     isResultDisplayed = true;
    
     return resultNum;
