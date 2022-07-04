@@ -4,31 +4,31 @@ const numbers = document.querySelectorAll(".btn__btn-num");
 const equalsToButton = document.querySelector("#equal");
 const allClearButton = document.querySelector("#clear");
 const percentButton = document.querySelector("#percent");
-const plusMinusButton =document.querySelector("#plusMinus");
+const plusMinusButton = document.querySelector("#plusMinus");
 let screenDisplay = document.querySelectorAll(".calculator__screen")[0];
 
 //has the user clicked equals to get a result
 let isResultDisplayed = false;
 
-//add listeners by iterating over all number buttons
+// add listeners by iterating over all number buttons
 for(let i = 0; i < numbers.length; i++) {
-    numbers[i].addEventListener("click", function(event) {
+    numbers[i].addEventListener("click", (event) => {
         //listener waits for click event to fire. When it does, the event data 
         //is passed to this function, to be completed.
         
         let currentStringOnScreen = screenDisplay.innerHTML;
         let lastCharacter = currentStringOnScreen[currentStringOnScreen.length - 1];
 
-        if(screenDisplay.innerHTML.length < 9){
+        if(screenDisplay.innerHTML.length < 9) {
             screenDisplay.innerHTML += event.target.innerHTML;
         }
 
     });
 }
 
-//add listeners for operand buttons
+// add listeners for operand buttons
 for(let i = 0; i < opperators.length; i++) {
-    opperators[i].addEventListener("click", function(event) {
+    opperators[i].addEventListener("click", (event) => {
         
         console.log(`${opperators[i]} was clicked`);
 
@@ -60,18 +60,37 @@ equalsToButton.addEventListener("click", (event) => {
 
 })
 
-//add listener for clear
-allClearButton.addEventListener("click", function(event) {
+// add listener for clear
+allClearButton.addEventListener("click", (event) => {
     console.log("AC button cleared display")
     screenDisplay.innerHTML = "";
     isResultDisplayed = false;
 });
 
+// ADD PERCENTAGE FUNCTION AND LISTENER TO CALCULATOR //////////////////////////////////
+const calculatePercentage = (stringOnScreen) => {
+    return parseFloat(stringOnScreen) / 100;
+}
 
+percentButton.addEventListener("click", (event) => {
+    
+    screenDisplay.innerHTML = calculatePercentage(screenDisplay.innerHTML);
+})
+
+// ADD PLUSMINUS FUNCTION AND LISTENER /////////////////////////////////////////////////
+const changeToNegative = (stringOnScreen) => {
+    return parseFloat(stringOnScreen) * (-1); 
+}
+
+plusMinusButton.addEventListener("click", (event) => {
+    screenDisplay.innerHTML = changeToNegative(screenDisplay.innerHTML);
+
+// CANT MAKE THE NEGATIVE NUMBER WORK WITH OPPERAND CAUSE OF 2 "-" SIGNS
+})
 
 // calculate /x-+ function /////////////////////////////////////////////////////////////
 const calculateEquation = (stringOnScreen) => {       
-    let resultNum = 0;
+    let resultNum = "";
  
     //split the stringOnScreen parameter based on the operand (+, -, x, /)
 
@@ -110,11 +129,5 @@ const calculateEquation = (stringOnScreen) => {
     }
     isResultDisplayed = true;
    
-    return resultNum;
+    return resultNum.toString().substring(0,11);
 };
-
-// convert to percentage function /////////////////////////////////////////////////////
-
-// function that equates and joins it all together??? idk//////////////////////////////
-
-// add event triggers that reads input, performs the action and returns an output /////
