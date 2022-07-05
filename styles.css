@@ -1,16 +1,18 @@
 header {
-  background-color: rgb(25, 136, 187);
+  text-align: center;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 header h1 {
   display: block;
-  color: white;
+  color: #808080;
 }
 
 footer {
-  background-color: rgb(25, 136, 187);
+  text-align: center;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 footer h2 {
-  color: white;
+  color: #808080;
 }
 
 .calculator__buttons {
@@ -52,15 +54,26 @@ footer h2 {
 }
 
 .calculator__container {
-  margin: 1rem;
-  border-radius: 5%;
+  height: 30rem;
   padding: 1rem;
   background-color: black;
+  margin: 1rem 0 1rem 0;
 }
 .calculator__container .calculator__screen {
-  height: 5rem;
+  height: 9rem;
   text-align: end;
-  margin: 1rem 0 0 0;
+  margin: 1rem 0 1rem 0;
   color: white;
   font-size: 3rem;
+}
+
+@media screen and (min-width: 426px) {
+  main {
+    display: flex;
+    justify-content: center;
+  }
+  main .calculator__container {
+    border-radius: 5%;
+    width: 26.563rem;
+  }
 }/*# sourceMappingURL=styles.css.map */

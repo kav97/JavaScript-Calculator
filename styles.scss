@@ -9,17 +9,30 @@
 }
 
 .calculator__container{
-    margin: 1rem;
-    border-radius: 5%;
+    height: 30rem;
     padding: 1rem;
     background-color: $background-color;
+    margin: 1rem 0 1rem 0;
 
     .calculator__screen {
-        height: 5rem;
+        height: 9rem;
         text-align: end;
-        margin: 1rem 0 0 0;
+        margin: 1rem 0 1rem 0;
         color: $number-text-color;
         font-size: 3rem;
     }
 }
+
+@media screen and (min-width: 426px) {
+    main {
+        display: flex;
+        justify-content: center;
+        
+        .calculator__container {
+        border-radius: 5%;
+        width: 26.563rem;
+        }   
+    }
+}
+    
 

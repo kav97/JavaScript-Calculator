@@ -1,18 +1,21 @@
 @use "./variables" as *;
 
 header {
-    background-color: $header-footer-color;
+
+    text-align: center;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 
     h1 {
         display: block;
-        color: $number-text-color;
+        color: $header-footer-text-color;
     }
 }
 
 footer {
-    background-color: $header-footer-color;
+    text-align: center;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 
     h2 {
-        color: $number-text-color
+        color: $header-footer-text-color;
     }
 }
