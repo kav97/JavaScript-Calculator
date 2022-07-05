@@ -5,7 +5,7 @@ const equalsToButton = document.querySelector("#equal");
 const allClearButton = document.querySelector("#clear");
 const percentButton = document.querySelector("#percent");
 const plusMinusButton = document.querySelector("#plusMinus");
-let screenDisplay = document.querySelectorAll(".calculator__screen");
+let screenDisplay = document.querySelectorAll(".calculator__screen")[0];
 
 // has the user clicked equals to get a result
 let isResultDisplayed = false;
@@ -28,8 +28,8 @@ for(let i = 0; i < opperators.length; i++) {
         
         console.log("opperator was clicked");
 
-        //let currentStringOnScreen = screenDisplay.innerHTML;
-        let lastCharacter = screenDisplay.innerHTML[screenDisplay.innerHTML.length - 1];
+        let currentStringOnScreen = screenDisplay.innerHTML;
+        let lastCharacter = currentStringOnScreen[currentStringOnScreen.length - 1];
 
         // if the screen has no text, do not allow the opperator to display (maybe add a console message)
         if (screenDisplay.innerHTML.length === 0) {
@@ -37,7 +37,7 @@ for(let i = 0; i < opperators.length; i++) {
         }
         // else if an opperator is the last character, replace it with the new character
         else if (lastCharacter === "+" || lastCharacter === "-" || lastCharacter === "x" || lastCharacter === "/" ) {
-            screenDisplay.innerHTML +=  event.target.innerHTML;
+            screenDisplay.innerHTML = currentStringOnScreen.substring(0, currentStringOnScreen.length - 1) + event.target.innerHTML;
         }
         // else calculate the value and append new opperator
         else {
