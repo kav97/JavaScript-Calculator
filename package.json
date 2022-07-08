@@ -1,0 +1,24 @@
+{
+  "name": "javascript-calculator",
+  "version": "1.0.0",
+  "description": "For this project I was breifed to recreate the iPhone calculator model. I have created a basic JavaScript webpage using HTML, SCSS and JavaScript. It performs basic opperations, by using event handlers that are assigned to each button (DOM manipulation) and functions to perform the equations. \r <br>\r <br>\r <br>",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "cypress": "cypress open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kav97/JavaScript-Calculator.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kav97/JavaScript-Calculator/issues"
+  },
+  "homepage": "https://github.com/kav97/JavaScript-Calculator#readme",
+  "devDependencies": {
+    "cypress": "^10.3.0"
+  }
+}
